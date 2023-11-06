@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="675.0" prefWidth="938.0" style="-fx-background-color: #DCEBFA; -fx-background-color: #F8FBFF;" stylesheets="@../../../style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.FrontEnd.TransferController">
+    <children>
+        <VBox prefHeight="675.0" prefWidth="319.0" style="-fx-background-color: #52779C; -fx-background-color: #414D59;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <Pane prefHeight="112.0" prefWidth="319.0">
+                    <children>
+                        <Label layoutX="49.0" layoutY="41.0" prefHeight="31.0" prefWidth="230.0" text="JC. LAPEL United Bank" textFill="WHITE">
+                            <font>
+                                <Font name="Arial Bold" size="20.0" />
+                            </font>
+                        </Label>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0" />
+                    </children>
+                </Pane>
+                <Button fx:id="userMenu" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#switchToCustomerMenu" onMouseEntered="#confirmHoverInUser" onMouseExited="#confirmHoverOutUser" prefHeight="55.0" prefWidth="321.0" style="-fx-background-color: #52779C; -fx-background-color: #414D59;" text="User menu" textFill="WHITE">
+                    <opaqueInsets>
+                        <Insets />
+                    </opaqueInsets>
+                    <padding>
+                        <Insets left="50.0" />
+                    </padding>
+                    <font>
+                        <Font name="Arial" size="17.0" />
+                    </font>
+                    <effect>
+                        <Glow />
+                    </effect>
+                </Button>
+            <Button fx:id="SignOut" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#switchToStart" onMouseEntered="#confirmHoverInSignO" onMouseExited="#confirmHoverOutSignO" prefHeight="55.0" prefWidth="321.0" style="-fx-background-color: #52779C; -fx-background-color: #414D59;" text="SIGN OUT" textFill="WHITE">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+               <font>
+                  <Font name="Arial" size="17.0" />
+               </font>
+               <effect>
+                  <Glow />
+               </effect>
+            </Button>
+            </children>
+        </VBox>
+        <Label layoutX="384.0" layoutY="122.0" prefHeight="79.0" prefWidth="383.0" text="Transfer money" textFill="#5d84a4">
+            <font>
+                <Font name="Arial Bold" size="47.0" />
+            </font>
+        </Label>
+        <Pane layoutX="319.0" prefHeight="112.0" prefWidth="620.0" style="-fx-background-color: #215E9B; -fx-background-color: #27313A;" AnchorPane.leftAnchor="319.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <Label layoutX="144.0" layoutY="40.0" text="THE BANK YOU DESERVE" textAlignment="CENTER" textFill="WHITE">
+                    <font>
+                        <Font name="Arial Bold" size="27.0" />
+                    </font>
+                    <effect>
+                        <DropShadow />
+                    </effect>
+                </Label>
+            </children>
+        </Pane>
+      <Label layoutX="384.0" layoutY="188.0" prefHeight="26.0" prefWidth="116.0" text="From Account:">
+         <font>
+            <Font name="Arial Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="384.0" layoutY="312.0" prefHeight="26.0" prefWidth="116.0" text="To Acccount:">
+         <font>
+            <Font name="Arial Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="384.0" layoutY="468.0" prefHeight="26.0" prefWidth="397.0" text="How much:">
+         <font>
+            <Font name="Arial Bold" size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="transferAmount" layoutX="384.0" layoutY="494.0" prefHeight="26.0" prefWidth="354.0" promptText="SEK">
+         <font>
+            <Font name="Arial" size="12.0" />
+         </font></TextField>
+      <Button layoutX="384.0" layoutY="568.0" mnemonicParsing="false" onAction="#onActionTransfer" prefHeight="26.0" prefWidth="166.0" text="Transfer">
+         <font>
+            <Font name="Arial" size="12.0" />
+         </font></Button>
+      <Button layoutX="571.0" layoutY="568.0" mnemonicParsing="false" onAction="#switchToCustomerMenu" prefHeight="26.0" prefWidth="166.0" text="Cancel">
+         <font>
+            <Font name="Arial" size="12.0" />
+         </font></Button>
+      <Label fx:id="warningLabel" layoutX="382.0" layoutY="442.0" prefHeight="26.0" prefWidth="544.0" textFill="RED">
+         <font>
+            <Font name="Arial Bold" size="16.0" />
+         </font>
+      </Label>
+      <ListView fx:id="fromAccount" layoutX="384.0" layoutY="214.0" prefHeight="94.0" prefWidth="354.0" />
+      <ListView fx:id="toAccount" layoutX="384.0" layoutY="338.0" prefHeight="94.0" prefWidth="354.0" />
+      <Label fx:id="selectedToAccountLabel" layoutX="497.0" layoutY="312.0" prefHeight="26.0" prefWidth="434.0" text="Select account">
+         <font>
+            <Font name="Arial Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="selectedFromAccountLabel" layoutX="508.0" layoutY="188.0" prefHeight="26.0" prefWidth="416.0" text="Select account">
+         <font>
+            <Font name="Arial Bold" size="16.0" />
+         </font>
+      </Label>
+      <Button fx:id="selectedAccountToButton" layoutX="751.0" layoutY="372.0" mnemonicParsing="false" onAction="#onActionSelectAccountTo" prefHeight="26.0" prefWidth="166.0" text="Select account">
+         <font>
+            <Font name="Arial" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="selectedAccountFromButton" layoutX="751.0" layoutY="248.0" mnemonicParsing="false" onAction="#onActionSelectAccounFrom" prefHeight="26.0" prefWidth="166.0" text="Select account">
+         <font>
+            <Font name="Arial" size="12.0" />
+         </font>
+      </Button>
+    </children>
+</AnchorPane>
